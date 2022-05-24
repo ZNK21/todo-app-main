@@ -15,6 +15,67 @@
     display: none;
 }
 
+.container {
+    padding: 54px 8%;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.top-logos {
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    margin-bottom: 48px;
+}
+
+.divInput {
+    display: flex;
+    align-content: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+#btnCreate {
+    position: absolute;
+    left: 16px;
+    margin-top: 15px;
+}
+
+.todoInput {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px;
+    font-size: var(--normalSize);
+    padding: 0 0 0 47px;
+}
+
+#todoList {
+    list-style-type: none;
+    padding-left: 0;
+    background: white;
+    border-radius: 5px 5px 0 0;
+}
+
+li {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--normalSize);
+    display: flex;
+    align-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
 body {
     background: url(../images/bg-desktop-light.jpg) #FAFAFA;
     background-repeat: no-repeat;
@@ -25,82 +86,12 @@ body {
     color: var(--primary);
 }
 
-.container {
-    padding: 0 7%;
-}
-
 .circle {
     width: 20px;
     height: 20px;
     border-radius: 10px;
     border: 1px solid #E3E4F1;
     background: transparent;
-}
-
-.top-logos {
-    max-width: 540px;
-    margin: 14% auto 13%;
-    display: flex;
-    justify-content: space-between;
-    min-width: 322.500px;
-}
-
-.todoInput {
-    width: 100%;
-    height: 13vw;
-    text-indent: 12vw;
-    border: none;
-    border-radius: 5px;
-    font-family: 'Josefin Sans';
-    font-style: normal;
-    font-weight: 400;
-    line-height: 12px;
-    letter-spacing: -0.166667px;
-    font-size: var(--normalSize);
-    padding: 0;
-}
-
-#btnCreate {
-    position: absolute;
-    left: 30px;
-}
-
-.divInput {
-    width: 540px;
-    display: flex;
-    align-items: center;
-    margin: 0 auto 4vw;
-    box-sizing: border-box;
-    position: relative;
-}
-
-#todoList {
-
-    background: white;
-    border-radius: 5px 5px 0 0;
-    list-style-type: none;
-    padding: 0;
-    margin: 0 auto;
-    box-shadow: 0px 35px 50px -15px #00000080;
-   width: 540px;
-}
-
-li {
-    width: 100%;
-    padding: 4vw;
-    border-bottom: 1px solid #E3E4F1;
-    font-family: 'Josefin Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: var(--normalSize);
-    line-height: 12px;
-    letter-spacing: -0.166667px;
-    max-width: 540px;
-    min-width: 315.062px;
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-    box-sizing: border-box;
 }
 
 .listText {
@@ -175,29 +166,11 @@ li {
     margin-bottom: 15vw;
 }
 
-@media screen and (min-width: 200px ) and (max-width: 375px) {
-    body {
-        background: url(../images/bg-mobile-light.jpg) #FAFAFA;
-        background-repeat: no-repeat;
-    }
-}
 
-@media screen and (min-width: 376px ) and (max-width: 425px ) {
+/*Media query*/
 
-}
-
-@media screen and (min-width: 426px ) and (max-width: 595px ) {
-
-}
-
-@media screen and (min-width: 596px ) {
-    .divBottom {
-        padding: 4vw;
-        background: white;
-        margin-bottom: 20vw;
-    }
-
-    .container {
-        padding: 0 15%;
+@media screen (min-width: 350px) {
+    :root {
+        --normalSize: 14px;
     }
 }
