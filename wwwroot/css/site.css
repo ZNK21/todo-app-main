@@ -1,0 +1,203 @@
+﻿
+
+:root {
+    --primary: #494C6B;
+    --secondary: #9495A5;
+    --normalSize: 16px;
+    --bigSize: 4vw;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+.invisible {
+    display: none;
+}
+
+body {
+    background: url(../images/bg-desktop-light.jpg) #FAFAFA;
+    background-repeat: no-repeat;
+    margin: 0;
+    font-size: var(--normalSize);
+    font-family: Josefin Sans;
+    font-weight: 400;
+    color: var(--primary);
+}
+
+.container {
+    padding: 0 7%;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid #E3E4F1;
+    background: transparent;
+}
+
+.top-logos {
+    max-width: 540px;
+    margin: 14% auto 13%;
+    display: flex;
+    justify-content: space-between;
+    min-width: 322.500px;
+}
+
+.todoInput {
+    width: 100%;
+    height: 13vw;
+    text-indent: 12vw;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: -0.166667px;
+    font-size: var(--normalSize);
+    padding: 0;
+}
+
+#btnCreate {
+    position: absolute;
+    left: 30px;
+}
+
+.divInput {
+    width: 540px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto 4vw;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#todoList {
+
+    background: white;
+    border-radius: 5px 5px 0 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    box-shadow: 0px 35px 50px -15px #00000080;
+   width: 540px;
+}
+
+li {
+    width: 100%;
+    padding: 4vw;
+    border-bottom: 1px solid #E3E4F1;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--normalSize);
+    line-height: 12px;
+    letter-spacing: -0.166667px;
+    max-width: 540px;
+    min-width: 315.062px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.listText {
+    padding: 0 0 0 3vw;
+}
+
+.btnDelete {
+    width: 4vw;
+    position: absolute;
+    right: 12vw;
+}
+
+.divBottom {
+    background: white;
+    padding: 4vw 3vw 4vw 5vw;
+    color: var(--secondary);
+    display: flex;
+    border-radius: 0 0 5px 5px;
+    margin: 0 auto 5vw;
+    justify-content: space-between;
+    box-shadow: 0px 22px 50px -15px #0000007d;
+    width: 540px;
+}
+
+#btnClear {
+    background: transparent;
+    border: none;
+    font-size: var(--normalSize);
+    color: var(--secondary);
+}
+
+.divFilters {
+    display: flex;
+    width: 78vw;
+    padding: 4vw;
+    border-radius: 5px;
+    background: white;
+    justify-content: space-evenly;
+    margin-bottom: 20vw;
+    box-shadow: 0px 22px 50px -15px #0000007d;
+}
+
+#btnAll {
+    background: transparent;
+    border: none;
+    font-size: var(--bigSize);
+    font-weight: 700;
+    color: var(--secondary)
+}
+
+#btnActive {
+    background: transparent;
+    border: none;
+    font-size: var(--bigSize);
+    font-weight: 700;
+    color: var(--secondary)
+}
+
+#btnCompleted {
+    background: transparent;
+    border: none;
+    font-size: var(--bigSize);
+    font-weight: 700;
+    color: var(--secondary)
+}
+
+.dragText {
+    font-size: var(--bigSize);
+    width: 86vw;
+    text-align: center;
+    color: var(--secondary);
+    margin-bottom: 15vw;
+}
+
+@media screen and (min-width: 200px ) and (max-width: 375px) {
+    body {
+        background: url(../images/bg-mobile-light.jpg) #FAFAFA;
+        background-repeat: no-repeat;
+    }
+}
+
+@media screen and (min-width: 376px ) and (max-width: 425px ) {
+
+}
+
+@media screen and (min-width: 426px ) and (max-width: 595px ) {
+
+}
+
+@media screen and (min-width: 596px ) {
+    .divBottom {
+        padding: 4vw;
+        background: white;
+        margin-bottom: 20vw;
+    }
+
+    .container {
+        padding: 0 15%;
+    }
+}

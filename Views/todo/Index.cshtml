@@ -1,0 +1,41 @@
+﻿@{ Layout = "~/Views/Shared/_LayoutNoNavbar.cshtml";
+}
+@model todoApp.Models.todoModels
+
+<div class="top-logos">
+    <img src="~/images/todo-logo.svg" alt="Page logo" />
+    <img src="~/images/dark-mode-logo.svg" alt="Alternate Text" />
+</div>
+
+<div class="divInput">
+    <button type="button" class="circle" id="btnCreate"></button>
+    <input class="todoInput" id="todoText" type="text" placeholder="Create a new todo">
+</div>
+
+<ul id="todoList">
+    @foreach (var i in Model.todo) {
+
+        <li data-position="@i.position" data-regid="@i.id" class='draggable @((i.status == "completed") ? "completed" : "active")' draggable='true'>
+            <button type="button" class="circle" id="check_@i.id"></button>
+            <span class="listText  @((i.status == "completed") ? "completed" : "active")">@i.description</span>
+            <img src="~/images/icon-cross.svg" class="btnDelete" id="btnDelete_@i.id">
+        </li>
+    }
+</ul>
+
+<div class="divBottom">
+    <span>@Model.items items left</span>
+    <button type="button" id="btnClear">Clear Completed</button>
+</div>
+
+<div class="divFilters">
+    <button type="button" id="btnAll">All</button>
+    <button type="button" id="btnActive">Active</button>
+    <button type="button" id="btnCompleted">Completed</button>
+</div>
+
+<div class="dragText">
+    <span>
+        Drag and drop to reorder list
+    </span>
+</div>
