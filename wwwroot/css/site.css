@@ -1,5 +1,6 @@
 ﻿:root {
     --bgDesktop: url(../images/bg-desktop-light.jpg) #FAFAFA;
+    --bgMobile: url(../images/bg-mobile-light.jpg) #FAFAFA;
     --primary: #FFFFFF;
     --shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
     --textPrimary: #494C6B;
@@ -8,6 +9,7 @@
 
 [data-theme="dark"] {
     --bgDesktop: url(../images/bg-desktop-dark.jpg) #171823;
+    --bgMobile: url(../images/bg-mobile-dark.jpg) #171823;
     --primary: #25273D;
     --shadow: none;
     --textPrimary: #C8CBE7;
@@ -258,8 +260,10 @@ body {
 
 @media screen and (min-width: 200px) and (max-width: 375px) {
     body {
-        background: url(../images/bg-mobile-light.jpg);
+        background: var(--bgMobile);
         background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top center;
     }
 }
 
