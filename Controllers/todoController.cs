@@ -29,10 +29,12 @@ namespace todoApp.Controllers {
             bool status = false;
             var result = new { status = status };
 
+            var ultimaPosicion = _Data.todo.OrderByDescending(p => p.position).FirstOrDefault().position;
+
             try {
                 todo ii = new todo {
                     description = i.description,
-                    position = _Data.todo.Count() + 1,
+                    position = ultimaPosicion + 1,
                     status = "active",
                 };
 
