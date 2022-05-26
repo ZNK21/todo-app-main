@@ -1,14 +1,22 @@
-﻿
+﻿:root {
+    --bgDesktop: url(../images/bg-desktop-light.jpg) #FAFAFA;
+    --primary: #FFFFFF;
+    --shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+    --textPrimary: #494C6B;
+    --textSecondary: #9495A5;
+}
 
-:root {
-    --primary: #494C6B;
-    --secondary: #9495A5;
-    --normalSize: 16px;
-    --bigSize: 4vw;
+[data-theme="dark"] {
+    --bgDesktop: url(../images/bg-desktop-dark.jpg) #171823;
+    --primary: #25273D;
+    --shadow: none;
+    --textPrimary: #C8CBE7;
+    --textSecondary: #5B5E7E;
 }
 
 .completed {
     text-decoration: line-through;
+    color: var(--textSecondary);
 }
 
 .invisible {
@@ -29,7 +37,8 @@
     display: flex;
     align-content: center;
     justify-content: space-between;
-    margin-bottom: 48px;
+    max-width: 540px;
+    margin: 0 auto 48px;
 }
 
 .divInput {
@@ -37,6 +46,8 @@
     align-content: center;
     position: relative;
     box-sizing: border-box;
+    max-width: 540px;
+    margin: 0 auto;
 }
 
 #btnCreate {
@@ -54,8 +65,9 @@
     font-style: normal;
     font-weight: 400;
     line-height: 12px;
-    font-size: var(--normalSize);
+    font-size: 12px;
     padding: 0 0 0 47px;
+    background: var(--primary);
 }
 
 #todoList {
@@ -63,27 +75,30 @@
     padding-left: 0;
     background: white;
     border-radius: 5px 5px 0 0;
+    margin-bottom: 0;
 }
 
 li {
     font-family: 'Josefin Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: var(--normalSize);
+    font-size: 12px;
     display: flex;
     align-content: center;
     align-items: center;
     padding: 16px;
+    border-bottom: 1px solid #E3E4F1;
+    background: var(--primary);
 }
 
 body {
-    background: url(../images/bg-desktop-light.jpg) #FAFAFA;
+    background: var(--bgDesktop);
     background-repeat: no-repeat;
     margin: 0;
-    font-size: var(--normalSize);
+    font-size: 12px;
     font-family: Josefin Sans;
     font-weight: 400;
-    color: var(--primary);
+    color: var(--textPrimary);
 }
 
 .circle {
@@ -92,85 +107,177 @@ body {
     border-radius: 10px;
     border: 1px solid #E3E4F1;
     background: transparent;
+    cursor: pointer;
+}
+
+    .circle:hover {
+        border-image-source: url(../images/btn-border.svg);
+        border-image-slice: 12;
+        border-image-width: 20px;
+    }
+
+.btnDelete {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 4vw;
+    margin-top: 4px;
+    border: none;
+    background: transparent;
+}
+
+.deleteImg {
+    width: 12px;
 }
 
 .listText {
-    padding: 0 0 0 3vw;
-}
-
-.btnDelete {
-    width: 4vw;
-    position: absolute;
-    right: 12vw;
+    padding: 4px 0 0 11px;
 }
 
 .divBottom {
-    background: white;
-    padding: 4vw 3vw 4vw 5vw;
-    color: var(--secondary);
+    background: var(--primary);
     display: flex;
+    padding: 16px;
     border-radius: 0 0 5px 5px;
-    margin: 0 auto 5vw;
+    align-content: center;
+    align-items: center;
     justify-content: space-between;
-    box-shadow: 0px 22px 50px -15px #0000007d;
-    width: 540px;
+    margin-bottom: 15px;
 }
 
-#btnClear {
+.itemsLeft {
+    padding-left: 3px;
+    color: var(--textSecondary);
+}
+
+[id^=btnClear] {
     background: transparent;
     border: none;
-    font-size: var(--normalSize);
-    color: var(--secondary);
+    color: var(--textSecondary);
+    font-size: 12px;
+    font-family: 'Josefin Sans';
+    padding-right: 0px;
 }
 
 .divFilters {
+    max-width: 540px;
+    position: relative;
     display: flex;
-    width: 78vw;
-    padding: 4vw;
+    background: var(--primary);
     border-radius: 5px;
-    background: white;
-    justify-content: space-evenly;
-    margin-bottom: 20vw;
-    box-shadow: 0px 22px 50px -15px #0000007d;
+    padding: 16px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 50px;
+    box-shadow: var(--shadow);
 }
 
-#btnAll {
+[id^=btnAll] {
     background: transparent;
     border: none;
-    font-size: var(--bigSize);
+    font-size: 14px;
     font-weight: 700;
-    color: var(--secondary)
+    color: var(--textSecondary)
 }
 
-#btnActive {
+[id^=btnActive] {
     background: transparent;
     border: none;
-    font-size: var(--bigSize);
+    font-size: 14px;
     font-weight: 700;
-    color: var(--secondary)
+    color: var(--textSecondary)
 }
 
-#btnCompleted {
+[id^=btnCompleted] {
     background: transparent;
     border: none;
-    font-size: var(--bigSize);
+    font-size: 14px;
     font-weight: 700;
-    color: var(--secondary)
+    color: var(--textSecondary)
 }
 
 .dragText {
-    font-size: var(--bigSize);
-    width: 86vw;
+    font-size: 14px;
     text-align: center;
-    color: var(--secondary);
-    margin-bottom: 15vw;
+    color: var(--textSecondary);
+}
+
+.firstBox {
+    position: relative;
+    max-width: 540px;
+    margin: 0 auto;
+    box-shadow: var(--shadow);
+}
+
+.secondBox {
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+.divBottomDesk {
+    background: var(--primary);
+    display: none;
+    padding: 16px;
+    border-radius: 0 0 5px 5px;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.checked {
+    background: url(../images/btn-checked.svg);
+    background-size: cover;
+    background-position: center center;
+    border: none;
+}
+
+[id^=btn] {
+    cursor: pointer;
+}
+
+    [id^=btn]:hover {
+        color: #3A7CFD;
+    }
+
+[id^=btnTheme] {
+    background: none;
+    border: none;
+}
+
+.theme {
+    width: 20px;
+    height: 20px;
+}
+
+/*----------Media querys----------*/
+
+@media screen and (min-width: 200px) and (max-width: 375px) {
+    body {
+        background: url(../images/bg-mobile-light.jpg);
+        background-repeat: no-repeat;
+    }
 }
 
 
-/*Media query*/
+/*----------Desktop Query----------*/
+@media screen and (min-width: 500px) {
+    .divBottom {
+        display: none;
+    }
 
-@media screen (min-width: 350px) {
-    :root {
-        --normalSize: 14px;
+    .divBottomDesk {
+        display: flex;
+    }
+
+    .divFilters {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .btnDelete {
+        right: 2vw;
     }
 }

@@ -11,16 +11,16 @@
     });
 
     $("#btnCreate").click(function () {
+        btnActive();
         newItem();
     })
 
-    $("#btnAll").click(function () {
+    $("[id^=btnAll]").click(function () {
         $("li").addClass("visible");
         $("li").removeClass("invisible");
     })
 
-
-    $("#btnActive").click(function () {
+    $("[id^=btnActive]").click(function () {
 
         $("li.completed").addClass("invisible");
         $("li.completed").removeClass("visible");
@@ -28,7 +28,7 @@
         $("li.active").removeClass("invisible")
     })
 
-    $("#btnCompleted").click(function () {
+    $("[id^=btnCompleted]").click(function () {
         $("li.completed").addClass("visible");
         $("li.completed").removeClass("invisible");
         $("li.active").addClass("invisible");
@@ -42,7 +42,7 @@
         }
     })
 
-    $("#btnClear").click(function () {
+    $("[id^=btnClear]").click(function () {
         if (confirm("Are you sure?")) {
             $.ajax({
                 type: "delete",
@@ -55,6 +55,16 @@
                     }
                 }
             })
+        }
+    })
+
+    $("[id^=btnTheme]").click(function () {
+        $("[id^=btnTheme]").toggleClass("invisible");
+        var theme = $("html").attr("data-theme");
+        if (theme == "light") {
+            $("html").attr("data-theme", "dark");
+        } else {
+            $("html").attr("data-theme", "light");
         }
     })
 

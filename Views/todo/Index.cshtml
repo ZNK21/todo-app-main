@@ -4,7 +4,8 @@
 
 <div class="top-logos">
     <img src="~/images/todo-logo.svg" alt="Page logo" />
-    <img src="~/images/dark-mode-logo.svg" alt="Alternate Text" />
+    <button id="btnTheme"><img class="theme" src="~/images/dark-mode-logo.svg" alt="Alternate Text" /></button>
+    <button class="invisible" id="btnTheme2"><img class="theme" src="~/images/icon-sun.svg" alt="Alternate Text" /></button>
 </div>
 
 <div class="divInput">
@@ -12,26 +13,41 @@
     <input class="todoInput" id="todoText" type="text" placeholder="Create a new todo">
 </div>
 
-<ul id="todoList">
-    @foreach (var i in Model.todo) {
+<div class="firstBox">
+    <ul id="todoList">
+        @foreach (var i in Model.todo) {
 
-        <li data-position="@i.position" data-regid="@i.id" class='draggable @((i.status == "completed") ? "completed" : "active")' draggable='true'>
-            <button type="button" class="circle" id="check_@i.id"></button>
-            <span class="listText  @((i.status == "completed") ? "completed" : "active")">@i.description</span>
-            <img src="~/images/icon-cross.svg" class="btnDelete" id="btnDelete_@i.id">
-        </li>
-    }
-</ul>
+            <li data-position="@i.position" data-regid="@i.id" class='draggable @((i.status == "completed") ? "completed" : "active")' draggable='true'>
+                <button type="button" class="circle @((i.status == "completed") ? "checked" : "")" id="check_@i.id"></button>
+                <span class="listText  @((i.status == "completed") ? "completed" : "active")">@i.description</span>
+                <button type="button" class="btnDelete" id="btnDelete_@i.id"><img class="deleteImg" src="~/images/icon-cross.svg" alt="cross" /></button>
+            </li>
+        }
+    </ul>
 
-<div class="divBottom">
-    <span>@Model.items items left</span>
-    <button type="button" id="btnClear">Clear Completed</button>
+    <div class="divBottom">
+        <span class="itemsLeft">@Model.items items left</span>
+        <button type="button" id="btnClear">Clear Completed</button>
+    </div>
+
+    <div class="divBottomDesk">
+        <span class="itemsLeft">@Model.items items left</span>
+        <div>
+            <button type="button" id="btnAllD">All</button>
+            <button type="button" id="btnActiveD">Active</button>
+            <button type="button" id="btnCompletedD">Completed</button>
+        </div>
+        <button type="button" id="btnClearD">Clear Completed</button>
+
+    </div>
 </div>
 
-<div class="divFilters">
-    <button type="button" id="btnAll">All</button>
-    <button type="button" id="btnActive">Active</button>
-    <button type="button" id="btnCompleted">Completed</button>
+<div class="secondBox">
+    <div class="divFilters">
+        <button type="button" id="btnAll">All</button>
+        <button type="button" id="btnActive">Active</button>
+        <button type="button" id="btnCompleted">Completed</button>
+    </div>
 </div>
 
 <div class="dragText">
